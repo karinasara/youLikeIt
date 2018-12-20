@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Login Information</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="username" placeholder="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" [(ngModel)]="password" placeholder="password">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-button (click)="onRegisterClick()">Register</button>
+    <button mat-button (click)="onLoginClick()">Ok</button>
+  </mat-card-footer>
+</mat-card>

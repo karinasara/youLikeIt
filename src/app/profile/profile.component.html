@@ -1,0 +1,22 @@
+<div *ngIf="user">
+<mat-card style="margin-bottom: 20px">
+  <mat-card-header class="likeable-header">
+    <div mat-card-avatar class="avatar"></div>
+    <mat-card-title-group style="text-align: left;">
+      <mat-card-title>
+        <span>{{user.name}}</span>
+      </mat-card-title>
+      <mat-card-subtitle>Candidato a Presidente</mat-card-subtitle>
+    </mat-card-title-group>
+    <span fxFlex></span>
+    <mat-icon *ngIf="isMine()" routerLink="/profileEdition/{{user.id}}" class="ulike-icon" style="margin-right: -2px">edit</mat-icon>
+  </mat-card-header>
+  <mat-card-content style="margin-bottom: 5px;text-align: left;">
+    <p>TODO user.description </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <mat-icon class="ulike-icon">thumb_up</mat-icon><span class="ulike-icon-text">3455</span>
+    <mat-icon class="ulike-icon">share</mat-icon>
+  </mat-card-actions>
+</mat-card>
+</div>

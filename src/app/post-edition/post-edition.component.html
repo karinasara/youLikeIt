@@ -1,0 +1,22 @@
+<mat-card>
+  <div *ngIf="post">
+    <mat-card-title>{{post.title| uppercase}}</mat-card-title>
+    <mat-card-content>
+      <form #postForm="ngForm">
+
+          <mat-form-field class="form-input">
+            <input matInput [(ngModel)]="post.title" placeholder="Titulo" name="title" #title="ngModel" required minlength="3" maxlength="30"/>
+            <mat-error *ngIf="title.touched && !title.valid && title.errors.required">Título es requerido</mat-error>
+            <mat-error *ngIf="title.touched && !title.valid &&  title.errors.minlength">Título debe ser de al menos 3 caracteres</mat-error>
+          </mat-form-field>
+
+        <div>
+          <mat-form-field class="form-input">
+            <mat-label>Contenido</mat-label>
+            <textarea matInput cdkTextareaAutosize #content="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" name="content" [(ngModel)]="post.content"></textarea>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </div>
+</mat-card>
