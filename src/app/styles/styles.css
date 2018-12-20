@@ -58,4 +58,13 @@
 
 .likeable-header{
   cursor: pointer;
+  text-align: left;
+}
+
+
+.mat-card {
+  border-radius: 10px;
+}
+.mat-card:not([class*='mat-elevation-z']) {
+  box-shadow: 0px 3px 8px -2px rgba(209, 209, 209, 1);
 }
