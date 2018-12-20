@@ -1,1 +1,7 @@
 @import "../styles/styles.css";
+
+.login-title{
+  background: linear-gradient(to right, #00c9fd 0%, #588ae8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
