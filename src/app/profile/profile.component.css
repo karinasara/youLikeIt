@@ -1,1 +1,5 @@
 @import "../styles/styles.css";
+.avatar-profile{
+  background-image: url('../../assets/profile-128x128.png');
+  background-size: cover;
+}
