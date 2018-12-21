@@ -80,8 +80,14 @@ h1.ulike-app-name {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .ulike-toolbar{
   background: rgba(0, 0, 0, 0) linear-gradient(to right, #00c9fd 0%, #588ae8 100%) repeat scroll 0 0
+}
+
+.ulike-sidenav{
+  background: rgba(0, 0, 0, 0) linear-gradient(#00c9fd 0%, #588ae8 100%) repeat scroll 0 0;
+  color: white;
 }

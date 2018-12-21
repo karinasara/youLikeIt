@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 import {UserService} from '../services/user.service';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {SessionService} from '../services/session.service';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {ToolbarService} from '../services/toolbar.service';
 import {ToolbarDirective} from './toolbar/toolbar.directive';
 import {ToolbarComponent} from './toolbar/toolbar.component';
@@ -36,6 +36,8 @@ export class NavigationBarComponent implements OnInit {
 
   @ViewChild(MatSidenav) sideNav: MatSidenav;
 
+  isLoggedIn$: Observable<boolean>;
+
   constructor(private router: Router,
               private sessionService: SessionService,
               private componentFactoryResolver: ComponentFactoryResolver,
@@ -52,12 +54,9 @@ export class NavigationBarComponent implements OnInit {
       this.page = value;
       this.loadToolbar();
     });
+    this.isLoggedIn$ = this.userService.isLoggedIn;
   }
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-    this.pageSubs.unsubscribe();
-  }
 
   private loadToolbar() {
       const toolbarItem = this.toolbarService.toolbarMap.get(this.page);
@@ -74,7 +73,7 @@ export class NavigationBarComponent implements OnInit {
 
   logout(): void {
     localStorage.clear();
-    this.userService.loggedUser = null;
+    this.userService.logout();
     this.router.navigate(['/login']).then();
     this.sideNav.toggle();
 

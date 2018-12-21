@@ -1,15 +1,28 @@
-<mat-card>
-  <mat-card-title class="login-title">Inicia sesión</mat-card-title>
-  <mat-card-content>
-    <mat-form-field>
-      <input matInput [(ngModel)]="username" placeholder="username">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" [(ngModel)]="password" placeholder="password">
-    </mat-form-field>
-  </mat-card-content>
-  <mat-card-footer>
-    <button mat-button (click)="onRegisterClick()">Register</button>
-    <button mat-button (click)="onLoginClick()">Ok</button>
-  </mat-card-footer>
-</mat-card>
+<div class="login" layout-fill>
+
+  <div class="ulike-logo">
+    <img src="../../assets/icon-152x152.png">
+  </div>
+  <div class="login-form">
+    <div class="login-form-content">
+      <h3 style="color: white;text-align: center;font-size: 20px">Inicia sesión</h3>
+      <div>
+        <div>
+        <mat-form-field class="login-input" color="accent">
+          <input matInput [(ngModel)]="username" placeholder="Usuario">
+        </mat-form-field>
+        </div>
+        <div>
+        <mat-form-field class="login-input" color="accent">
+          <input matInput type="password" [(ngModel)]="password" placeholder="Contraseña">
+        </mat-form-field>
+        </div>
+        <div style="margin-top: 20px;text-align: center">
+          <button mat-flat-button  (click)="onRegisterClick()" class="login-button">Registrarme</button>
+          <button mat-flat-button  (click)="onLoginClick()" class="login-button">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

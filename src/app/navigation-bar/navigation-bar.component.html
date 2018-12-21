@@ -1,18 +1,19 @@
 <div class="ulike-container" [class.ulike-is-mobile]="mobileQuery.matches" >
-  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="start center" class="ulike-toolbar">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="start center" class="ulike-toolbar" [style.display]="(isLoggedIn$ | async)? 'flex': 'none'">
     <ng-template toolbar></ng-template>
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #sideNav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+    class="ulike-sidenav">
       <mat-nav-list>
-        <a mat-list-item routerLink="/dashboard"(click)="sideNav.toggle()" >Dashboard</a>
-        <a mat-list-item routerLink="/login"(click)="logout()" >Logout</a>
+        <a mat-list-item routerLink="/dashboard"(click)="sideNav.toggle()" style="color: white">Dashboard</a>
+        <a mat-list-item routerLink="/login"(click)="logout()" style="color: white">Logout</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="ulike-sidenav-content" >
-      <div id="main" class="main">
+      <div id="main" style="flex: auto">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>

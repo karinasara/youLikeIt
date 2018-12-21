@@ -46,10 +46,9 @@ export class LoginComponent implements OnInit {
 
     if (this.username && this.password) {
       this.login();
-
     } else {
       console.log('missing credentials');
-      this.openSnackBar('Please enter User and Password');
+      this.openSnackBar('Por favor ingresa usuario y password');
     }
   }
 
@@ -74,7 +73,7 @@ export class LoginComponent implements OnInit {
   }
 
   private openSnackBar(message: string) {
-    this.snackBar.open(message, 'error', {
+    this.snackBar.open(message, 'Ok', {
       duration: 2000,
     });
   }

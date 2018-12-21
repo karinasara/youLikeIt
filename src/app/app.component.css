@@ -1,1 +1,13 @@
 @import "styles/styles.css";
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+::ng-deep app-root {
+  display: block;
+  height: 100%;
+  background-color: #588ae8; /* color del footer de toda la app */
+}

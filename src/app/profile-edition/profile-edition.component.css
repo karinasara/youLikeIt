@@ -6,3 +6,9 @@
   height: 90px;
   width: 90px;
 }
+.addNewBlock{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-top: 20px;
+  color: darkgrey;
+}
+

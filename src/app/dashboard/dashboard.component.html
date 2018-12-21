@@ -1,9 +1,10 @@
+<div class="main">
 <mat-form-field class="search-form">
   <input matInput placeholder="Buscar..." type="text">
 </mat-form-field>
 <br>
 
-<div *ngIf="user" style="text-align: -webkit-left;">
+<div *ngIf="user">
   <div *ngFor="let post of posts" style="margin-bottom: 20px">
     <app-post [post]="post" ></app-post>
   </div>
@@ -13,4 +14,5 @@
           <mat-icon>add circle</mat-icon>
         </button>
       </span>
+</div>
 </div>

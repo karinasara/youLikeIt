@@ -1,7 +1,54 @@
 @import "../styles/styles.css";
 
-.login-title{
-  background: linear-gradient(to right, #00c9fd 0%, #588ae8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.login{
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-top: -60px;
+  z-index: 100;
+  position: fixed;
+  background-size: cover;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0) linear-gradient(#00c9fd 0%, #588ae8 100%) repeat scroll 0 0
+}
+.ulike-logo{
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.login-input{
+  width: 100%;
+}
+
+::ng-deep .login-input .mat-form-field-flex{
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.login-form{
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+.login-form-content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.login-button{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+::ng-deep .login-input .mat-form-field-underline {
+  display: none;
+}
+.mat-input-element{
+  color: white;
+}
+::ng-deep  .mat-form-field-appearance-legacy .mat-form-field-infix {
+  margin-left: 10px;
 }

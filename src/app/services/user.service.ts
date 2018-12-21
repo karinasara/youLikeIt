@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../dtos/User';
 import { of } from 'rxjs';
 
@@ -14,6 +14,9 @@ export class UserService {
 
   data: User;
 
+  private loggedIn = new BehaviorSubject<boolean>(false); // {1}
+
+
   constructor(
     private firestore: AngularFirestore
   ) {
@@ -21,6 +24,10 @@ export class UserService {
 
   public createUser(data: any) {
     return this.firestore.collection('users').add(data);
+  }
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable(); // {2}
   }
 
   public getUser(username: string, password: string): Observable<any> {
@@ -44,7 +51,12 @@ export class UserService {
     localStorage.setItem('userName', loggedUser.username);
     localStorage.setItem('password', loggedUser.password); // TODO fixit
     this.loggedUser = loggedUser;
+    this.loggedIn.next(true);
+  }
 
+  logout() {
+    this.loggedUser = null;
+    this.loggedIn.next(false);
   }
 
 }

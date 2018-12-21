@@ -1,11 +1,12 @@
-<mat-card style="margin-bottom: 20px">
+<div class="main">
+<mat-card style="margin-bottom: 20px; text-align: -webkit-left;" >
   <mat-card-header class="likeable-header">
     <div mat-card-avatar class="avatar"></div>
     <mat-card-title-group>
     <mat-card-title>
       <span>{{post.title}}</span>
     </mat-card-title>
-    <mat-card-subtitle>Subtítulo</mat-card-subtitle>
+      <mat-card-subtitle>de <span class="ulike-subtitle" routerLink="/profile">Menganito</span></mat-card-subtitle>
     </mat-card-title-group>
     <span fxFlex></span>
     <mat-icon *ngIf="isMyPost(post)" routerLink="/postEdition/{{post.id}}" class="ulike-icon" style="margin-right: -2px">edit</mat-icon>
@@ -18,3 +19,4 @@
     <mat-icon class="ulike-icon">share</mat-icon>
   </mat-card-actions>
 </mat-card>
+</div>

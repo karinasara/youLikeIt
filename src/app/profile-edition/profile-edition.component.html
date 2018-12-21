@@ -1,6 +1,6 @@
-<mat-card>
-  <div *ngIf="profile">
-    <mat-card-header class="likeable-header" routerLink="/post">
+
+  <div *ngIf="profile" class="ulike-form">
+    <mat-card-header class="likeable-header" style="margin-bottom: 20px;" routerLink="/post">
       <div mat-card-avatar class="avatar-profile"></div>
       <mat-card-title style="margin-top: 20px;">
         <span>{{profile.name | uppercase}}</span>
@@ -8,7 +8,7 @@
       <mat-card-subtitle>Subtítulo</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content style="max-width: 800px;margin-top: 20px;">
+
       <form #profForm="ngForm">
         <div>
           <mat-form-field class="form-input">
@@ -24,7 +24,15 @@
           </mat-form-field>
         </div>
       </form>
-    </mat-card-content>
-  </div>
-</mat-card>
 
+  </div>
+
+  <div style="text-align: center; margin-top: 50px;">
+    <h3 class="addNewBlock">Agrega un nuevo post!</h3>
+    <mat-icon style="color: darkgrey; font-size: 40px;">add_circle_outline</mat-icon>
+  </div>
+  <span class="addButton" >
+    <button matTooltip="Nuevo" matTooltipPosition="above" mat-fab >
+      <mat-icon>add circle</mat-icon>
+    </button>
+  </span>
