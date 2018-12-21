@@ -40,8 +40,9 @@
   margin-right: 15px;
 }
 .login-button{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 ::ng-deep .login-input .mat-form-field-underline {
   display: none;
